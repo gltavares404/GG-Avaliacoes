@@ -1,6 +1,6 @@
 <?php
-    $servername = "localhost:3308";
-    $database = "ggcerto";
+    $servername = "localhost";
+    $database = "gg";
     $username = "root";
     $password = "";
 

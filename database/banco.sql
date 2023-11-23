@@ -3,14 +3,14 @@ CREATE TABLE categoria (
     Categoria Varchar(25)
 );
 
+CREATE TABLE estrelas (
+    ID_STAR INT AUTO_INCREMENT PRIMARY KEY,
+    AVALIACAO VARCHAR (45)
+);
+
 CREATE TABLE avaliacoes (
     ID_AVALIACAO INT AUTO_INCREMENT PRIMARY KEY,
-    ID_OBRA INT,
-    Usuario varchar(30),
-    QTD_AVALIACOES INT,
-    TOTAL_ESTRELAS INT,
-    QTD_ESTRELAS INT(5),
-    Review text
+    DESCRICAO TEXT
 );
 
 CREATE TABLE obras (
@@ -20,12 +20,12 @@ CREATE TABLE obras (
     Autor Varchar(30),
     ID_CATEGORIA INT,
     FOREIGN KEY (ID_CATEGORIA) REFERENCES categoria(ID_CATEGORIA),
-    Sinopse text,
     ID_AVALIACAO INT,
     FOREIGN KEY (ID_AVALIACAO) REFERENCES avaliacoes(ID_AVALIACAO),
+    Sinopse text,
+    ID_STAR INT,
+    FOREIGN KEY (ID_STAR) REFERENCES estrelas(ID_STAR),
     Foto varchar(255),
     Tipo INT
 );
 
-ALTER TABLE avaliacoes
-    ADD CONSTRAINT ID_OBRA FOREIGN KEY (ID_OBRA) REFERENCES obras (ID_OBRA)

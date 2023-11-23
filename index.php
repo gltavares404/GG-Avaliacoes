@@ -105,11 +105,12 @@
         <?php
         require("conecta.php");
 
-        $dados_select = mysqli_query($conn, "SELECT ID_OBRA, Nome, ID_AVALIACAO, Foto FROM obras WHERE obras.tipo = 1");
+        $dados_select = mysqli_query($conn, "SELECT ID_OBRA, Nome, Foto FROM obras WHERE obras.tipo = 1");
         echo "<form action='pag_avaliacao.php' method='post'>";
         while ($dado = mysqli_fetch_array($dados_select)) {
-            echo '<div class="card"><img src="' . $dado[3] . '"><div class="card-title">' . $dado[1] . '</div><input type="submit" class="avaliacao" name= enviar[" .$dado[0]. "] value="Avaliar"></a></div>';
+            echo '<div class="card"><a href="pag_avaliacao.php?id=' . $dado['ID_OBRA'] . '"><img src="' . $dado['Foto'] . '"><div class="card-title">' . $dado['Nome'] . '</div></a></div>';
         }
+        
         ?>
 
     </div>
@@ -125,9 +126,9 @@
         <?php
         require("conecta.php");
 
-        $dados_select = mysqli_query($conn, "SELECT ID_OBRA, Nome, ID_AVALIACAO, Foto FROM obras WHERE obras.tipo = 2");
+        $dados_select = mysqli_query($conn, "SELECT ID_OBRA, Nome, Foto FROM obras WHERE obras.tipo = 2");
         while ($dado = mysqli_fetch_array($dados_select)) {
-            echo '<div class="card"><img src="' . $dado[3] . '"><div class="card-title">' . $dado[1] . '</div><a href="attack.html" class="avaliacao">Avaliações ' . $dado[2] . ' ⭐</a></div>';
+            echo '<div class="card"><a href="pag_avaliacao.php?id=' . $dado['ID_OBRA'] . '"><img src="' . $dado['Foto'] . '"><div class="card-title">' . $dado['Nome'] . '</div></a></div>';
         }
         ?>
     </div>
@@ -145,9 +146,9 @@
         <?php
         require("conecta.php");
 
-        $dados_select = mysqli_query($conn, "SELECT ID_OBRA, Nome, ID_AVALIACAO, Foto FROM obras");
+        $dados_select = mysqli_query($conn, "SELECT ID_OBRA, Nome, Foto FROM obras");
         while ($dado = mysqli_fetch_array($dados_select)) {
-            echo '<div class="card"><img src="' . $dado[3] . '"><div class="card-title">' . $dado[1] . '</div><a href="attack.html" class="avaliacao">Avaliações ' . $dado[2] . ' ⭐</a></div>';
+            echo '<div class="card"><a href="pag_avaliacao.php?id=' . $dado['ID_OBRA'] . '"><img src="' . $dado['Foto'] . '"><div class="card-title">' . $dado['Nome'] . '</div></a></div>';
         }
         ?>
     </div>
@@ -162,9 +163,9 @@
             <?php
             require("conecta.php");
 
-            $dados_select = mysqli_query($conn, "SELECT ID_OBRA, Nome, ID_AVALIACAO, Foto FROM obras");
+            $dados_select = mysqli_query($conn, "SELECT ID_OBRA, Nome, Foto FROM obras");
             while ($dado = mysqli_fetch_array($dados_select)) {
-                echo '<div class="card"><img src="' . $dado[3] . '"><div class="card-title">' . $dado[1] . '</div><a href="attack.html" class="avaliacao">Avaliações ' . $dado[2] . ' ⭐</a></div>';
+                echo '<div class="card"><a href="pag_avaliacao.php?id=' . $dado['ID_OBRA'] . '"><img src="' . $dado['Foto'] . '"><div class="card-title">' . $dado['Nome'] . '</div></a></div>';
             }
             ?>
     </div>
@@ -181,9 +182,9 @@
             <?php
             require("conecta.php");
 
-            $dados_select = mysqli_query($conn, "SELECT ID_OBRA, Nome, ID_AVALIACAO, Foto FROM obras");
+            $dados_select = mysqli_query($conn, "SELECT ID_OBRA, Nome, Foto FROM obras");
             while ($dado = mysqli_fetch_array($dados_select)) {
-                echo '<div class="card"><img src="' . $dado[3] . '"><div class="card-title">' . $dado[1] . '</div><a href="attack.html" class="avaliacao">Avaliações ' . $dado[2] . ' ⭐</a></div>';
+                echo '<div class="card"><a href="pag_avaliacao.php?id=' . $dado['ID_OBRA'] . '"><img src="' . $dado['Foto'] . '"><div class="card-title">' . $dado['Nome'] . '</div></a></div>';
             }
             ?>
     </div>

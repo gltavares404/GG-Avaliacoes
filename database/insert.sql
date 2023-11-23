@@ -10,16 +10,15 @@ VALUES
 ('Terror');
 
 
-INSERT INTO avaliacoes (QTD_ESTRELAS,Review)
+INSERT INTO estrelas (ID_STAR, AVALIACAO)
 VALUES
 (1,'Muito Ruim'),
 (2,'Ruim'),
 (3,'Ok'),
 (4,'Bom'),
-(5,'Muito Bom'),
-(4, '"Review do usuário"');
+(5,'Muito Bom');
 
-INSERT INTO obras(Nome, Lancamento, Autor, ID_CATEGORIA, Sinopse, ID_AVALIACAO, Foto, Tipo)
+INSERT INTO obras(Nome, Lancamento, Autor, ID_CATEGORIA, Sinopse, ID_STAR, Foto, Tipo)
 VALUES
 ('Chainsaw Man', '2022-10-12', 'Tatsuki Fujimoto', 1, 'Denji tem um sonho simples: viver uma vida feliz e pacífica, passando um tempo com uma garota de quem ele goste. Porém, isso está muito longe da realidade, já que Denji é forçado pela yakuza a matar demônios para pagar suas dívidas astronômicas. Usando seu demônio de estimação, Pochita, como arma, ele está pronto para fazer qualquer coisa por um pouco de dinheiro. Infelizmente, ele é assassinado por um demônio contratado pela yakuza. No entanto, em uma virada inesperada nos acontecimentos, Pochita se funde com o cadáver de Denji e concede a ele os poderes de uma serra elétrica. Agora capaz de transformar partes de seu corpo em motosserras, um Denji revivido, usa suas novas habilidades para acabar com os seus inimigos de maneira rápida e brutal.', 5, 'elementos/chainsaw.webp', 1),
 ('Spy × Family', '2022-9-4','Tatsuya Endo', 1, 'Não acostumado a depender de outras pessoas, Twilight arruma uma mulher e uma criança para sua missão de se infiltrar em uma escola particular de elite. Mas o que ele não sabe é que a mulher que ele escolheu é uma assassina e a criança que ele adotou é uma telepata', 5, 'elementos/spy.jpe', 1),
