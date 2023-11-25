@@ -9,8 +9,9 @@
 <body>
 <a href="index.php" class="voltar"><input type="button" value="Voltar"></a>
 
-    <?php
+<?php
     require("conecta.php");
+
     if (isset($_GET['id'])) {
         $obra_id = $_GET['id'];
 
@@ -29,7 +30,8 @@
         echo 'ID da obra não fornecido.';
     }
     ?>
-    <form class="avaliacao-form" method="POST" action="registra_avaliacao.php">
+   <form class="avaliacao-form" method="POST" action="registra_avaliacao.php?id=<?php echo $obra_id; ?>">
+    <input type="hidden" name="obra_id" value="<?php echo $obra_id; ?>">
         <table>
         <?php
                         require("conecta.php");
@@ -44,8 +46,8 @@
                         
                     ?>
             <td class="avac">Digite sua avaliação: <textarea class="avaliacao-textarea" name="desc"></textarea></td>
+            <input type="submit" value="Avaliar" name='avaliar'>
         </table>
-        <input type="submit" value="Avaliar" name=avaliar'>
 
     </form>
     

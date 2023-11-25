@@ -1,15 +1,18 @@
 <?php
-    require("conecta.php");
+require("conecta.php");
 
-    if (isset($_POST['avaliar'])) {
-        $avaliacao = $_POST['desc'];
-        $sql = "UPDATE obras SET ID_AVALIACAO = '$avaliacao'";
+if (isset($_POST['avaliar'])) {
+    $obra_id = $_POST['obra_id'];
+    $avaliacao = $_POST['desc'];
+    $estrela_id = $_POST['estrelar'];
 
-        if ($conn->query($sql) === TRUE) {
-            echo "<center><h1>Registro Inserido com Sucesso</h1>";
-            echo "<a href='index.html'><input type='button' value='Voltar'></a></center>";
-        } else {
-            echo "<h3>OCORREU UM ERRO: </h3>: " . $sql . "<br>" . $conn->error;
-        }
+    $sql = "INSERT INTO avaliacoes (ID_OBRA, DESCRICAO, ID_STAR) VALUES ('$obra_id', '$avaliacao', '$estrela_id')";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
+        echo "Avaliação registrada com sucesso!";
+    } else {
+        echo "Erro ao registrar avaliação: " . mysqli_error($conn);
     }
+}
 ?>
